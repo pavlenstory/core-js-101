@@ -15,13 +15,14 @@
  * @return {Object}
  *
  * @example
- *    const r = new Rectangle(10,20);
- *    console.log(r.width);       // => 10
+ *    const r = new Rectangle(10,20); console.log(r.width);       // => 10
  *    console.log(r.height);      // => 20
  *    console.log(r.getArea());   // => 200
  */
-function Rectangle(/* width, height */) {
-  throw new Error('Not implemented');
+function Rectangle(width, height) {
+  this.width = width;
+  this.height = height;
+  this.getArea = () => this.width * this.height;
 }
 
 

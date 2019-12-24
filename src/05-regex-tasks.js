@@ -32,7 +32,7 @@
  * @return {RegExp}
  */
 function getRegexForGuid() {
-  throw new Error('Not implemented');
+  return /\{[a-f 0-9]{8}-[a-f 0-9]{4}-[a-f 0-9]{4}-[a-f 0-9]{4}-[a-f 0-9]{12}\}/i;
 }
 /**
  * Returns the regexp that matches all the strings from first column
@@ -76,8 +76,8 @@ function getRegexForPitSpot() {
  *   'PASSW0RD'.match(validator)  => false
  *   'Pa55'.match(validator) => false
  */
-function getPasswordValidator(/* minLength */) {
-  throw new Error('Not implemented');
+function getPasswordValidator(minLength) {
+  return new RegExp(`(?=.*[a-z])(?=.*\\d)(?=.*[A-Z])(?!.*\\s)(?!.*_).{${minLength}}`);
 }
 
 
